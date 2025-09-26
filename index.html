@@ -1,105 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MS Engineering LLC</title>
   <style>
     :root{
       --navy:#003366;
       --navy-light:#0055a5;
-      --text:#ffffff;
-      --accent:#ffcc00;
-    }
-    
-    body {
-      margin:0; font-family: Arial, sans-serif; color:var(--text);
-      margin: 0;
-      padding: 0;
-      background-color: url("background.PNG") center/cover fixed no-repeat;
-      position:relative;
-    }
-    body::before{
-      content:""; positions:fixed; inset:0;
-      background:rgba(0,0,0,6);
-      z-index:-1;
-
-    .site-header {
-      background-color: rgba(0,51, 102, .9);;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 24px;
+      --text:#0e1624;
+      --card-bg:#ffffff;
+      --accent:#ffb400;
     }
 
-    .company-info { text-align: left; }
-    h1{ margin:0 0 6px; }
-    .tagline{ margin:0; opaccity:.95; }
-    .logo{ width:80; height:auto; max-hieght:80px; }
-    
-    /*/ Navigation bar */
-    nav { background-color: rgba(0,85,165,.9); text-align:center; padding: 10px; } 
-    nav a { color: var(--text); text-decoration: none; font-weight:bold; margin: 0 14px; }
-    nav a:hover { text-decoration: underline; }
-    
-    section { max-width: 900px; margin: 40px auto; padding:28px;
-      background-color: rgba(0, 0, 0, 0.35);
-      border-radius: 10px;
-             backdrop-filter:saturate(120%) blur(1px);
+    /* Base */
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f4f6fb;
+      color:var(--text);
     }
-    
-    h2{ color: #eaf2ff; margin-top:0; }
-      p, li{ text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
+
+    /* Header: name left, logo right */
+    .site-header{
+      background:var(--navy);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 24px;
+    }
+    .company-info{ text-align:left; }
+    .company-info h1{ margin:0 0 6px; font-size:28px; }
+    .company-info .tagline{ margin:0; opacity:.95; font-size:14px; }
+    .logo{ width:80px; height:auto; max-height:80px; }
+
+    /* Nav */
+    nav{
+      background:var(--navy-light);
+      text-align:center;
+      padding:10px;
+    }
+    nav a{
+      color:#fff; text-decoration:none; font-weight:bold; margin:0 14px;
+    }
+    nav a:hover{ text-decoration:underline; }
+
+    /* Sections */
+    section{
+      max-width:900px; margin:40px auto; padding:28px;
+      background:var(--card-bg);
+      border-radius:10px;
+      box-shadow:0 6px 18px rgba(0,0,0,.06);
+    }
+    h2{ color:var(--navy); margin-top:0; }
+
+    /* Careers */
+    .careers-intro{ margin-bottom:18px; }
+    .jobs{
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;
+    }
+    .job-card{
+      background:#fbfdff; border:1px solid #e5ecf5; border-radius:10px; padding:16px;
+    }
+    .job-card h3{ margin:0 0 4px; color:var(--navy); }
+    .badge{
+      display:inline-block; font-size:12px; padding:3px 8px; border-radius:999px;
+      background:#eef4ff; color:#274b8a; margin-bottom:10px;
+    }
+    .job-card ul{ margin:10px 0 14px 18px; }
+    .apply-btn{
+      display:inline-block; padding:10px 14px; border-radius:8px;
+      background:var(--accent); color:#432c00; font-weight:bold; text-decoration:none;
+    }
+    .apply-btn:hover{ filter:brightness(.95); }
 
     /* Footer */
-    footer {
-      background-color: rgba(0,51, 102, 0.9); text-align: center; padding: 14px; margin-top: 40px; }
+    footer{
+      background:var(--navy);
+      color:#fff; text-align:center; padding:14px; margin-top:40px;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
   <header class="site-header">
-      <div class="company-info">
-            <h1>MS Engineering LLC</h1>
-            <p>Consulting • Manufacturing •  Design Engineering • Reverse Engineering • Trade Compliance</p>
-          </div>
+    <div class="company-info">
+      <h1>MS Engineering LLC</h1>
+      <p class="tagline">Consulting • Manufacturing • Design Engineering • Reverse Engineering • Trade Compliance</p>
+    </div>
     <img src="Logo_1.png" alt="MS Engineering LLC Logo" class="logo">
   </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-  <a href="#career">Career</a>a>
-</nav>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<section id="about">
-   <h2.About Us</h2>
-   <p>
-    MS Engineering LLC provides expert consulting and engineering solutions across 
-    Mechanical and Electrical domain. We specialize in Design Engineering, Reverse Engineering, 
-    Manufacturing and Global Trade Compliance consulting to help businesses succeed 
-    globally.
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      MS Engineering LLC provides expert consulting and engineering solutions across mechanical and electrical domains.
+      We specialize in design engineering, reverse engineering, manufacturing, and compliance consulting to help
+      businesses succeed globally.
     </p>
- </sections>
+  </section>
 
- <section id="services">
+  <!-- Services -->
+  <section id="services">
     <h2>Our Services</h2>
     <ul>
       <li><b>Consulting:</b> Tailored strategies for engineering and trade compliance challenges.</li>
       <li><b>Design Engineering:</b> Innovative solutions in mechanical and electrical design.</li>
       <li><b>Reverse Engineering:</b> Analysis and recreation of complex systems and components.</li>
-      <li></b>Manufacturing:</b> Support with prototyping, production, and process optimization.</li>
       <li><b>Global Trade Compliance:</b> Guidance on regulations, classification, and processes.</li>
+      <li><b>Manufacturing:</b> Support with prototyping, production, and process optimization.</li>
     </ul>
- </section>
-  
- <section id="contact">
+  </section>
+
+  <!-- Careers -->
+  <section id="careers">
+    <h2>Careers</h2>
+    <p class="careers-intro">
+      We’re building a nimble, hands-on team across engineering and trade compliance.
+      If you love solving practical problems and shipping real hardware, we’d love to hear from you.
+    </p>
+
+    <div class="jobs">
+      <div class="job-card">
+        <h3>Mechanical Design Engineer</h3>
+        <span class="badge">Full-Time • Simi Valley, CA</span>
+        <ul>
+          <li>Develop 3D CAD models, mechanical enclosures, and custom fixtures.</li>
+          <li>Perform tolerance analysis and prepare manufacturing drawings.</li>
+          <li>Work with vendors on prototyping and DFM improvements.</li>
+        </ul>
+        <a class="apply-btn"
+           href='mailto:msyed@msengineering.us?subject=Application%20-%20Mechanical%20Design%20Engineer'>
+           Apply via Email</a>
+      </div>
+
+      <div class="job-card">
+        <h3>PCB Design Engineer (Electrical)</h3>
+        <span class="badge">Full-Time • Simi Valley, CA</span>
+        <ul>
+          <li>Design and layout high-speed PCBs with controlled impedance and differential pairs.</li>
+          <li>Coordinate schematics, BOMs, and ECOs with cross-functional teams.</li>
+          <li>Support bring-up/debug with SI/PI considerations.</li>
+        </ul>
+        <a class="apply-btn"
+           href='mailto:msyed@msengineering.us?subject=Application%20-%20PCB%20Design%20Engineer'>
+           Apply via Email</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Trade Compliance Analyst</h3>
+        <span class="badge">Part-Time • Remote-Friendly</span>
+        <ul>
+          <li>Assist with ECCN/HTS classification and documentation accuracy.</li>
+          <li>Maintain product master data, screen parties, and prepare reports.</li>
+          <li>Support process improvements and internal compliance training.</li>
+        </ul>
+        <a class="apply-btn"
+           href='mailto:msyed@msengineering.us?subject=Application%20-%20Trade%20Compliance%20Analyst'>
+           Apply via Email</a>
+      </div>
+
+      <div class="job-card">
+        <h3>Manufacturing Technician (On-Call)</h3>
+        <span class="badge">On-Site • Simi Valley, CA</span>
+        <ul>
+          <li>Build and test prototypes; maintain lab equipment and documentation.</li>
+          <li>Perform basic rework, wiring, and fixture assembly.</li>
+          <li>Provide feedback for work instructions and process improvements.</li>
+        </ul>
+        <a class="apply-btn"
+           href='mailto:msyed@msengineering.us?subject=Application%20-%20Manufacturing%20Technician'>
+           Apply via Email</a>
+      </div>
+    </div>
+
+    <p style="margin-top:16px;">
+      Don’t see a perfect fit? Send a quick intro and resume to
+      <a href="mailto:msyed@msengineering.us">msyed@msengineering.us</a>.
+    </p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:msyed@msengineering.us">msyed@msengineering.us</a></p>
-    <p>Location: 2338 Oak Haven ave. Simi Valley, CA-93063</p>
- </section>
+    <p>Location: 2338 Oak Haven Ave, Simi Valley, CA 93063</p>
+  </section>
 
- <footer>
-   <p>© 2021 MS Engineering LLC. All rights reserved.</p>
- </footer>
+  <footer>
+    <p>© 2025 MS Engineering LLC. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
