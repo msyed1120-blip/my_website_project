@@ -12,29 +12,27 @@
       background-color: #f9f9f9;
       color: #333;
     }
-    header {
+
+    /* Header */
+    .site-header {
       background-color: #003366;
       color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 20px;
-      text-align: center;
     }
     
-    .logo-container {
-        diplay: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .logo-container img {
-        width: 100px;
-        height: auto;
-    }
-
     .company-info {
         text-align: left;
     }
+    .site-header .logo {
+        width: 80px;
+        height: auto;
+        max-height: 80px;
+    }
     
+    /*/ Navigation bar */
     nav {
       background-color: #0055a5;
       padding: 10px;
@@ -60,7 +58,8 @@
     h2 {
       color: #003366;
     }
-    
+
+    /* Footer */
     footer {
       background-color: #003366;
       color: white;
@@ -71,15 +70,15 @@
   </style>
 </head>
 <body>
- 
-  <header>
-      <div class="logo -container">
-          <img src="Logo_1.png" alt="MS Engineering LLC logo">
-          <div class="company-info">
+
+  /* Header */
+  <header class="site-header">
+      <div class="company-info">
             <h1>MS Engineering LLC</h1>
             <p>Consulting • Manufacturing •  Design Engineering • Reverse Engineering • Trade Compliance</p>
           </div>
-      </div>
+
+    <img src="Logo_1.png" alt="MS Engineering LLC Logo" class="logo">
   </header>
 
 <nav>
